@@ -1,0 +1,70 @@
+{
+  "name": "4kvm",
+  "version": "1.0.0",
+  "description": "4kvm.tv 视频网站爬虫配置",
+  "baseUrl": "https://www.4kvm.tv",
+  "categories": {
+    "movie": {
+      "name": "电影",
+      "path": "/movie",
+      "type": "movie"
+    },
+    "tv": {
+      "name": "电视剧",
+      "path": "/tv",
+      "type": "tv"
+    },
+    "anime": {
+      "name": "动漫",
+      "path": "/anime",
+      "type": "anime"
+    },
+    "list": {
+      "name": "片单",
+      "path": "/list",
+      "type": "list"
+    }
+  },
+  "api": {
+    "videoPlay": "/video/play",
+    "videoList": "/api/list",
+    "videoDetail": "/api/detail",
+    "search": "/api/search"
+  },
+  "player": {
+    "provider": "33752",
+    "defaultQuality": "1080",
+    "signatureAlgorithm": "md5",
+    "keyAlgorithm": "base64",
+    "timestampKey": "t",
+    "signatureKey": "s",
+    "keyParam": "k",
+    "videoIdKey": "v",
+    "qualityKey": "q",
+    "providerKey": "p"
+  },
+  "encryption": {
+    "wasmModule": "/static/wasm/nbmovie_wasm.426511b7.js",
+    "wasmBinary": "/static/wasm/nbmovie_wasm_bg.d5d51939.wasm",
+    "functionName": "build_play_url",
+    "parameters": [
+      "dataid",
+      "secret_key",
+      "quality",
+      "play_key"
+    ]
+  },
+  "crawler": {
+    "delay": 2000,
+    "timeout": 30000,
+    "retries": 3,
+    "useBrowser": true,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+  },
+  "notes": [
+    "视频播放地址通过WebAssembly动态生成",
+    "需要浏览器环境或WASM模块来解密",
+    "播放地址具有时效性",
+    "建议使用Playwright或Selenium进行爬取"
+  ]
+}
