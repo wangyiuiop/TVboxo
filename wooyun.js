@@ -76,13 +76,6 @@ const FILTER_CONFIG = {
 };
 
 async function home() {
-    const filters = [
-        { key: 'genre', name: '类型', value: FILTER_CONFIG.genre.map(g => ({ n: g.name, v: g.key })) },
-        { key: 'region', name: '地区', value: FILTER_CONFIG.region.map(r => ({ n: r.name, v: r.key })) },
-        { key: 'language', name: '语言', value: FILTER_CONFIG.language.map(l => ({ n: l.name, v: l.key })) },
-        { key: 'year', name: '年份', value: FILTER_CONFIG.year.map(y => ({ n: y.name, v: y.key })) },
-        { key: 'sort', name: '排序', value: FILTER_CONFIG.sort.map(s => ({ n: s.name, v: s.key })) }
-    ];
     return JSON.stringify({
         class: [
             { type_id: '1', type_name: '电影' },
@@ -92,7 +85,41 @@ async function home() {
             { type_id: '4', type_name: '动画' },
             { type_id: '3', type_name: '综艺' }
         ],
-        filters: filters
+        filters: {
+            "1": [
+                { key: 'genre', name: '类型', value: FILTER_CONFIG.genre.map(g => ({ n: g.name, v: g.key })) },
+                { key: 'region', name: '地区', value: FILTER_CONFIG.region.map(r => ({ n: r.name, v: r.key })) },
+                { key: 'language', name: '语言', value: FILTER_CONFIG.language.map(l => ({ n: l.name, v: l.key })) },
+                { key: 'year', name: '年份', value: FILTER_CONFIG.year.map(y => ({ n: y.name, v: y.key })) },
+                { key: 'sort', name: '排序', value: FILTER_CONFIG.sort.map(s => ({ n: s.name, v: s.key })) }
+            ],
+            "2": [
+                { key: 'genre', name: '类型', value: FILTER_CONFIG.genre.map(g => ({ n: g.name, v: g.key })) },
+                { key: 'region', name: '地区', value: FILTER_CONFIG.region.map(r => ({ n: r.name, v: r.key })) },
+                { key: 'language', name: '语言', value: FILTER_CONFIG.language.map(l => ({ n: l.name, v: l.key })) },
+                { key: 'year', name: '年份', value: FILTER_CONFIG.year.map(y => ({ n: y.name, v: y.key })) },
+                { key: 'sort', name: '排序', value: FILTER_CONFIG.sort.map(s => ({ n: s.name, v: s.key })) }
+            ],
+            "3": [
+                { key: 'genre', name: '类型', value: FILTER_CONFIG.genre.map(g => ({ n: g.name, v: g.key })) },
+                { key: 'sort', name: '排序', value: FILTER_CONFIG.sort.map(s => ({ n: s.name, v: s.key })) }
+            ],
+            "4": [
+                { key: 'genre', name: '类型', value: FILTER_CONFIG.genre.map(g => ({ n: g.name, v: g.key })) },
+                { key: 'region', name: '地区', value: FILTER_CONFIG.region.map(r => ({ n: r.name, v: r.key })) },
+                { key: 'year', name: '年份', value: FILTER_CONFIG.year.map(y => ({ n: y.name, v: y.key })) },
+                { key: 'sort', name: '排序', value: FILTER_CONFIG.sort.map(s => ({ n: s.name, v: s.key })) }
+            ],
+            "5": [
+                { key: 'region', name: '地区', value: FILTER_CONFIG.region.map(r => ({ n: r.name, v: r.key })) },
+                { key: 'year', name: '年份', value: FILTER_CONFIG.year.map(y => ({ n: y.name, v: y.key })) },
+                { key: 'sort', name: '排序', value: FILTER_CONFIG.sort.map(s => ({ n: s.name, v: s.key })) }
+            ],
+            "6": [
+                { key: 'year', name: '年份', value: FILTER_CONFIG.year.map(y => ({ n: y.name, v: y.key })) },
+                { key: 'sort', name: '排序', value: FILTER_CONFIG.sort.map(s => ({ n: s.name, v: s.key })) }
+            ]
+        }
     });
 }
 
